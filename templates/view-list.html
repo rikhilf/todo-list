@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>View List!</title>
+        <link rel='stylesheet' href='/static/bootstrap.min.css'>
+        <link rel='stylesheet' href='/static/styles.css'>
+    </head>
+    <body>
+            <!-- navigation bar -->
+        <nav class="navbar navbar-expand">
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="/"><img class="logo" src="/static/logo.png" alt="logo"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/create-todo">create</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/view-todo-list">view</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <h2>Todo List</h2>
+        {% for todo in todo_list %}
+            <br/>
+            <h4>{{todo.title}}</h4>
+            <p>{{todo.description}}</p>
+        {% endfor %}
+    </body>
+</html>
