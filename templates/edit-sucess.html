@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <title>View List!</title>
         <link rel='stylesheet' href='/static/bootstrap.min.css'>
         <link rel='stylesheet' href='/static/styles.css'>
     </head>
@@ -26,27 +24,13 @@
                 </ul>
             </div>
         </nav>
-        <h2>Todo List</h2>
-        {% for i in range(todo_list| length) %} {% set todo = todo_list[i] %}
-        <div
-          class="todo {{ 'checked' if todo.checked else ''}}"
-        >
-        <div>
-          <form action="/view-todo-list" method="POST">
-            <button
-              type="submit"
-              style="float: right"
-              value="{{i}}"
-              name="check-button"
-              id="check-button"
-            >
-              {{'Uncheck' if todo.checked else 'Check'}}
-            </button>
-          </form>
-          </div>
-          <h4>{{todo.title}}</h4>
-          <p>{{todo.description}}</p>
-        </div>
-        {% endfor %}
+        <a href="/view-todo-list">Return to list view</a>
     </body>
+    <p>Successfully created todo!!!</p>
+    <p> Title: {{title}}</p>
+    <p> Description: {{description}}</p>
 </html>
+
+<form method="get">
+    <input type="submit" value="Create another!">
+</form>
